@@ -23,10 +23,12 @@ var fn = {
 			}
 			fn.enviarSesion(usuario, password);
 		}catch(error){
+			window.plugins.toast.show("catch error", 'long', 'center');
 			window.plugins.toast.show(error, 'short', 'center');
 		}
 	},
 	enviarSesion: function(usuario, password){
+		window.plugins.toast.show("llegue a enviarSesion", 'long', 'center');
 		if(networkInfo.estaConectado() == false){
 			window.plugins.toast.show("No existe conexión a internet, revisela e intente de nuevo", 'long', 'center');
 			
