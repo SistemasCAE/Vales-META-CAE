@@ -27,7 +27,6 @@ var fn = {
 		}
 	},
 	enviarSesion: function(usuario, password){
-		fn.quitarClases();
 		if(networkInfo.estaConectado() == false){
 			window.plugins.toast.show("No existe conexión a internet, revisela e intente de nuevo", 'long', 'center');
 			//alert("No existe conexión a internet, revisela e intente de nuevo");
