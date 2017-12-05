@@ -31,10 +31,10 @@ var fn = {
 	enviarSesion: function(usuario, password){
 	alert("llegue");
 		//window.plugins.toast.show("llegue a enviarSesion", 'long', 'center');
-		if(networkInfo.estaConectado() == false){
+		/*if(networkInfo.estaConectado() == false){
 			window.plugins.toast.show("No existe conexión a internet, revisela e intente de nuevo", 'long', 'center');
 			
-		}else{
+		}else{*/
 			$.ajax({
 				method: "POST",
 				url: "http://intranet.cae3076.com:50000/Vales_META-CAE/Recibe/compruebaSesion.php",
@@ -58,7 +58,7 @@ var fn = {
 				alert(error.message);
 				alert(error.responseText);
 			});
-		}
+		//}
 		
 	}
 };
