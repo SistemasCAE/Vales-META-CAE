@@ -28,7 +28,7 @@ var fn = {
 		}
 	},
 	enviarSesion: function(usuario, password){
-		window.plugins.toast.show("llegue a enviarSesion", 'long', 'center');
+		//window.plugins.toast.show("llegue a enviarSesion", 'long', 'center');
 		if(networkInfo.estaConectado() == false){
 			window.plugins.toast.show("No existe conexión a internet, revisela e intente de nuevo", 'long', 'center');
 			
@@ -41,10 +41,11 @@ var fn = {
 					pass: password
 				}
 			}).done(function(mensaje){
-				//alert("Datos enviados");
+				alert("Datos enviados");
 				if(mensaje != "0"){
 					window.localStorage.setItem("nombreUsuario", usuario);
 					$("#usuario").html(usuario);
+					alert("Exito");
 					window.location.href="#inicio";
 				}else{
 					window.plugins.toast.show("Usuario/Contraseña invalido(s)", 'long', 'center');
