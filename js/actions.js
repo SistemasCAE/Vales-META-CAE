@@ -24,8 +24,8 @@ var fn = {
 			fn.enviarSesion(usuario, password);
 		}catch(error){
 			//window.plugins.toast.show("catch error", 'long', 'center');
-			window.plugins.toast.show(error, 'short', 'center');
-			alert("error en el catch");
+			//window.plugins.toast.show(error, 'short', 'center');
+			alert("error en el catch: "+error);
 		}
 	},
 	enviarSesion: function(usuario, password){
