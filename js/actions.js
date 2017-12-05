@@ -28,8 +28,6 @@ var fn = {
 	},
 	enviarSesion: function(usuario, password){
 		fn.quitarClases();
-		//alert("Enviando datos");
-		//alert("Nombre: "+nombreR+" Email: "+emailR+" Telefono: "+telefonoR+" Password: "+passwordR+" Foto: "+fotoR);
 		if(networkInfo.estaConectado() == false){
 			window.plugins.toast.show("No existe conexión a internet, revisela e intente de nuevo", 'long', 'center');
 			//alert("No existe conexión a internet, revisela e intente de nuevo");
@@ -51,10 +49,6 @@ var fn = {
 					window.plugins.toast.show("Usuario/Contraseña invalido(s)", 'long', 'center');
 				}
 
-
-				//alert(mensaje);
-				//fn.sleep(3000);
-				//bcs.abrirCamara().delay( 3000 );
 			}).fail(function(error){
 				alert(error.status);
 				alert(error.message);
