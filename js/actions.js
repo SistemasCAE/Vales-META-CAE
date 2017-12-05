@@ -29,7 +29,7 @@ var fn = {
 	enviarSesion: function(usuario, password){
 		if(networkInfo.estaConectado() == false){
 			window.plugins.toast.show("No existe conexión a internet, revisela e intente de nuevo", 'long', 'center');
-			//alert("No existe conexión a internet, revisela e intente de nuevo");
+			
 		}else{
 			$.ajax({
 				method: "POST",
