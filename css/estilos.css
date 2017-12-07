@@ -1,3 +1,6 @@
+.divPadre{  /*padre*/
+	width: 100%; 
+}
 #imagenLogo{
 	width: 400px;
 	text-align: center;
@@ -6,15 +9,16 @@
 #login{
 	margin-top: 200px;
 }
-#contenido{
-	margin-left: 100px;
-	margin-top: 100px;
-	margin-bottom: 100px;
-	margin-right: 100px;
+
+.contenido{
 	font-family: Calibri;
 	font-size:  15px;
 	background:  #E7FCFF;
-	width: 80%;
 	height: 20em;
 	border-radius: 30px 50px;
+	color: #000000;
+	display: table-cell;
+	width: 700px;
+    padding: 5px 0;
+    margin: 0;
 }
