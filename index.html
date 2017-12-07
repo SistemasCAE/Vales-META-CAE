@@ -76,11 +76,17 @@
 		</div>
 	</div>
 	<div id="inicio" data-role="page">
+		<div data-role="panel" id="miPanel">
+			<h3>Menu</h3>
+			<ul data-role="listview" id="listaPanel2">
+				<li><a href="#" data-transition="flow">Vales Disponibles</a></li>
+				<li><a href="#" data-transition="flow">Restaurantes</a></li>
+				<li><a href="#" data-transition="flow">Historial</a></li>
+			</ul>
+		</div>
 		<div data-role="header" data-position="fixed">
 			<h1>Vales META/CAE</h1>
-			<a href="#" id="usuario">
-				
-			</a>
+			<a href="#miPanel" data-role="button" data-icon="bars" data-inline="true" id="botonMenu1">Menu</a>
 			<a href="#" id="botonCerrarSesion"  data-icon="delete">
 				&nbsp;Salir
 			</a>
