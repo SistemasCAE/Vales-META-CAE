@@ -9,6 +9,9 @@
 		<link rel="stylesheet" type="text/css" href="css/estilos.css">
 	</head>
 	<body>
+	
+	<!--//////////////////////////////////////////////////////////// PAGINA PRINCIPAL ////////////////////////////////////////////////////////-->
+	
 	<div id="paginaInicio" data-role="page">
 		<div data-role="header">
 			<h1>Bienvenido</h1>
@@ -39,6 +42,9 @@
 			</div>
 		</div>
 	</div>
+	
+	<!--//////////////////////////////////////////////////////////// PAGINA INICIO DE SESION ////////////////////////////////////////////////////////-->
+	
 	<div id="inicioSesion" data-role="page">
 		<div data-role="header">
 			<h1>Iniciar Sesión</h1>
@@ -74,6 +80,9 @@
 			</div>
 		</div>
 	</div>
+	
+	<!--//////////////////////////////////////////////////////////// PAGINA INICIO ////////////////////////////////////////////////////////-->
+	
 	<div id="bienvenido" data-role="page">
 		<div data-role="panel" id="miPanel1">
 			<h3>Menu</h3>
@@ -86,8 +95,8 @@
 		</div>
 		<div data-role="header" data-position="fixed">
 			<h1>Vales META/CAE</h1>
-			<a href="#miPanel1" data-role="button" data-icon="bars" data-inline="true" id="botonMenu1">Menu</a>
-			<a href="#" id="botonCerrarSesion"  data-icon="delete">&nbsp;Cerrar</a>
+			<a href="#miPanel1" data-role="button" data-icon="bars" data-inline="true" id="botonMenu1" hidden="" class="botonMenu">Menu</a>
+			<a href="#" id="botonCerrarSesion"  data-icon="delete" class="botonMenu">&nbsp;Cerrar</a>
 		</div>
 		<div data-role="content" class="ui-content divPadre" align="center">
 			<div class="contenido" align="center">
@@ -101,6 +110,8 @@
 		</div>
 	</div>
 	
+	<!--//////////////////////////////////////////////////////////// PAGINA VALES DISPONIBLES ////////////////////////////////////////////////////////-->
+	
 	<div id="valesDisponibles" data-role="page">
 		<div data-role="panel" id="miPanel2">
 			<h3>Menu</h3>
@@ -113,21 +124,21 @@
 		</div>
 		<div data-role="header" data-position="fixed">
 			<h1>Vales META/CAE</h1>
-			<a href="#miPanel2" data-role="button" data-icon="bars" data-inline="true" id="botonMenu1">Menu</a>
-			<a href="#" id="botonCerrarSesion"  data-icon="delete">
-				&nbsp;Salir
-			</a>
+			<a href="#miPanel2" data-role="button" data-icon="bars" data-inline="true" id="botonMenu1" class="botonMenu">Menu</a>
+			<a href="#" id="botonCerrarSesion"  data-icon="delete" class="botonMenu">&nbsp;Salir</a>
 		</div>
-			<div data-role="content" class="ui-content divPadre" align="center">
-				<div class="contenido2" align="center">
-					<p>Aqui se muestran los vales disponibles</p>
-				</div>
+		<div data-role="content" class="ui-content divPadre" align="center">
+			<div class="contenido2" align="center">
+				<p>Aqui se muestran los vales disponibles</p>
 			</div>
+		</div>
 		<div id="pieHome" data-role="footer" data-position="fixed">
 			<div class="datosFooter">&nbsp;</div>
 			<div class="datosFooter">Inform&aacute;tica CAE</div>
 		</div>
 	</div>
+	
+	<!--//////////////////////////////////////////////////////////// PAGINA RESTAURANTES ////////////////////////////////////////////////////////-->
 	
 	<div id="restaurantes" data-role="page">
 		<div data-role="panel" id="miPanel3">
@@ -141,23 +152,21 @@
 		</div>
 		<div data-role="header" data-position="fixed">
 			<h1>Vales META/CAE</h1>
-			<a href="#miPanel3" data-role="button" data-icon="bars" data-inline="true" id="botonMenu1">Menu</a>
-			<a href="#" id="botonCerrarSesion"  data-icon="delete">
-				&nbsp;Salir
-			</a>
+			<a href="#miPanel3" data-role="button" data-icon="bars" data-inline="true" id="botonMenu1" class="botonMenu">Menu</a>
+			<a href="#" id="botonCerrarSesion" data-icon="delete" class="botonMenu">&nbsp;Salir</a>
 		</div>
-		<div class="ui-content ui-body-b"  id="contenido2">
-			<ul data-role="listview">
-				<li>
-					<p>Aqui se muestran los Restaurantes</p>
-				</li>
-			</ul>
+		<div data-role="content" class="ui-content divPadre" align="center">
+			<div class="contenido2" align="center">
+				<p>Aqui se muestran los Restaurantes</p>
+			</div>
 		</div>
 		<div id="pieHome" data-role="footer" data-position="fixed">
 			<div class="datosFooter">&nbsp;</div>
 			<div class="datosFooter">Inform&aacute;tica CAE</div>
 		</div>
 	</div>
+	
+	<!--//////////////////////////////////////////////////////////// PAGINA HISTORIAL ////////////////////////////////////////////////////////-->
 	
 	<div id="historial" data-role="page">
 		<div data-role="panel" id="miPanel4">
@@ -171,24 +180,22 @@
 		</div>
 		<div data-role="header" data-position="fixed">
 			<h1>Vales META/CAE</h1>
-			<a href="#miPanel4" data-role="button" data-icon="bars" data-inline="true" id="botonMenu1">Menu</a>
-			<a href="#" id="botonCerrarSesion"  data-icon="delete">
-				&nbsp;Salir
-			</a>
+			<a href="#miPanel4" data-role="button" data-icon="bars" data-inline="true" id="botonMenu1" class="botonMenu">Menu</a>
+			<a href="#" id="botonCerrarSesion"  data-icon="delete" class="botonMenu">&nbsp;Salir</a>
 		</div>
-		<div class="ui-content ui-body-b"  id="contenido2">
-			<ul data-role="listview">
-				<li>
-					<p>Aqui se muestra el historial</p>
-				</li>
-			</ul>
+		<div data-role="content" class="ui-content divPadre" align="center">
+			<div class="contenido2" align="center">
+				<p>Aqui se muestra el historial</p>
+			</div>
 		</div>
 		<div id="pieHome" data-role="footer" data-position="fixed">
 			<div class="datosFooter">&nbsp;</div>
 			<div class="datosFooter">Inform&aacute;tica CAE</div>
 		</div>
 	</div>
-			
+	
+	<!--//////////////////////////////////////////////////////////// SCRIPTS ////////////////////////////////////////////////////////-->
+		
 	<script type="text/javascript" src="cordova.js"></script>
 	<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
 	<script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
