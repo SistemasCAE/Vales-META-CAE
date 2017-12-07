@@ -13,13 +13,25 @@
 
 .contenido{
 	font-family: Calibri;
-	font-size:  15px;
-	background:  #E7FCFF;
-	height: 20em;
+	font-size:  18px;
+	background:  #3CD4FA;
+	height: 40em;
 	border-radius: 30px 50px;
 	color: #000000;
 	display: table-cell;
-	width: 700px;
+	width: 600px;
+    padding: 5px 0;
+    margin: 0;
+}
+.contenido2{
+	font-family: Calibri;
+	font-size:  18px;
+	background:  #000000;
+	height: 40em;
+	border-radius: 30px 50px;
+	color: #FFFFFF;
+	display: table-cell;
+	width: 600px;
     padding: 5px 0;
     margin: 0;
 }
