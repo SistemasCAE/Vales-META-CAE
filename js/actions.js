@@ -8,7 +8,10 @@ var fn = {
 		 * En esta sección vamos a asociar
 		 * todos los eventos del "Click" al HTML
 		 */
+		 
+		 //var colaborador= window.localStorage.setItem("nombreUsuario");
 		 $("#botonIniciarSesion").tap(fn.iniciarSesion);
+		 fn.cargaVale();
 	
 	},
 	iniciarSesion: function(){
@@ -53,7 +56,10 @@ var fn = {
 				alert(error.responseText);
 			});
 		}
-		
+	},
+	cargaVale: function(){
+		console.log("llegue");
+		JsBarcode("#barcode1", "CAE7000008");
 	}
 };
 /*
