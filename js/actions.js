@@ -42,7 +42,7 @@ var fn = {
 				if(mensaje != "0"){
 					window.localStorage.setItem("nombreUsuario", usuario);
 					$("#usuario").html(usuario);
-					window.location.href="#inicio";
+					window.location.href="#bienvenido";
 				}else{
 					window.plugins.toast.show("Usuario/Contraseña invalido(s)", 'long', 'center');
 				}
