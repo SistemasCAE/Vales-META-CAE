@@ -9,9 +9,9 @@ var fn = {
 		 * todos los eventos del "Click" al HTML
 		 */
 		 
-		 //var colaborador= window.localStorage.setItem("nombreUsuario");
+		 var colaborador= window.localStorage.setItem("nombreUsuario");
 		 $("#botonIniciarSesion").tap(fn.iniciarSesion);
-		 fn.cargaVale();
+		 fn.cargaVale(colaborador);
 	
 	},
 	iniciarSesion: function(){
@@ -57,7 +57,7 @@ var fn = {
 			});
 		}
 	},
-	cargaVale: function(){
+	cargaVale: function(colaborador){
 		console.log("llegue");
 		JsBarcode("#barcode1", "CAE7000008");
 	}
@@ -65,10 +65,10 @@ var fn = {
 /*
  *Llamar al metodo Init en el navegador
  */
-//fn.init();
+fn.init();
 
 /*
  *Llamar deviceready para compilar
  */
 //
-fn.deviceready();
+//fn.deviceready();
