@@ -14,6 +14,14 @@ var fn = {
 		 
 	
 	},
+	compruebaSesion: function(){
+		if(window.localStorage.getItem("nombreUsuario") != null){
+			$("#usuario").html(window.localStorage.getItem("nombreUsuario"));
+			
+			window.location.href="#bienvenido";
+		}
+		fn.quitarClases();
+	},
 	iniciarSesion: function(){
 		var usuario = $("#usuarioSesion").val();
 		var password = $("#passwordSesion").val();
