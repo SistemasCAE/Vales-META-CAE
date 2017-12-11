@@ -68,7 +68,30 @@ var fn = {
 	},
 	cargaVale: function(){
 		alert("llegue a carga vale");
-		JsBarcode("#barcode1", "CAE7000008");
+		//JsBarcode("#barcode1", "CAE7000008");
+		var colaborador= window.localStorage.setItem("nombreUsuario");
+		$.ajax({
+				method: "POST",
+				url: "http://intranet.cae3076.com:50000/Vales_META-CAE/Recibe/compruebaSesion.php",
+				data: { 
+					usu: usuario,
+					pass: password
+				}
+			}).done(function(mensaje){
+				if(mensaje != "0"){
+					window.localStorage.setItem("nombreUsuario", usuario);
+					alert(mensaje);
+					JsBarcode("#barcode1", mensaje);
+					
+				}else{
+					window.plugins.toast.show("Usuario/Contraseña invalido(s)", 'long', 'center');
+				}
+
+			}).fail(function(error){
+				alert(error.status);
+				alert(error.message);
+				alert(error.responseText);
+			});
 		window.location.href="#bienvenido";
 	}
 };
