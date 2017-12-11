@@ -11,6 +11,7 @@ var fn = {
 		 fn.compruebaSesion();
 		 $("#botonIniciarSesion").tap(fn.iniciarSesion);
 		 $("#botonCerrarSesion").tap(fn.cerrarSesion);
+		 $("#barcode1").tap(fn.mostrarPopUp);
 	},
 	compruebaSesion: function(){
 		if(window.localStorage.getItem("nombreUsuario") != null){
