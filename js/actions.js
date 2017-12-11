@@ -16,7 +16,7 @@ var fn = {
 	compruebaSesion: function(){
 		if(window.localStorage.getItem("nombreUsuario") != null){
 			$("#usuario").html(window.localStorage.getItem("nombreUsuario"));
-			
+			fn.cargaVale();
 			window.location.href="#bienvenido";
 		}else{
 		window.location.href="#paginaInicio";
