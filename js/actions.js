@@ -8,18 +8,19 @@ var fn = {
 		 * En esta sección vamos a asociar
 		 * todos los eventos del "Click" al HTML
 		 */
-		 fn.compruebaSesion();
 		 $("#botonIniciarSesion").tap(fn.iniciarSesion);
 		 $("#botonCerrarSesion").tap(fn.cerrarSesion);
 		 $("#barcode1").tap(fn.mostrarPopUp);
+		 fn.compruebaSesion();
 	},
 	compruebaSesion: function(){
 		if(window.localStorage.getItem("nombreUsuario") != null){
 			$("#usuario").html(window.localStorage.getItem("nombreUsuario"));
 			
 			window.location.href="#bienvenido";
+		}else{
+		window.location.href="#paginaInicio";
 		}
-		fn.quitarClases();
 	},
 	iniciarSesion: function(){
 		var usuario = $("#usuarioSesion").val();
