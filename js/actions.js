@@ -69,7 +69,7 @@ var fn = {
 	cargaVale: function(){
 		alert("llegue a carga vale");
 		//JsBarcode("#barcode1", "CAE7000008");
-		var colaborador= window.localStorage.setItem("nombreUsuario");
+		var colaborador= window.localStorage.getItem("nombreUsuario");
 		window.location.href="#bienvenido";
 		alert(colaborador);
 		$.ajax({
