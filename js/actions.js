@@ -70,6 +70,8 @@ var fn = {
 		alert("llegue a carga vale");
 		//JsBarcode("#barcode1", "CAE7000008");
 		var colaborador= window.localStorage.setItem("nombreUsuario");
+		window.location.href="#bienvenido";
+		alert(colaborador);
 		$.ajax({
 				method: "POST",
 				url: "http://intranet.cae3076.com:50000/Vales_META-CAE/php/json.php",
@@ -81,7 +83,7 @@ var fn = {
 				if(mensaje != "0"){
 					alert(mensaje);
 					JsBarcode("#barcode1", mensaje);
-					window.location.href="#bienvenido";
+					
 				}else{
 				}
 
