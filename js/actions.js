@@ -11,7 +11,7 @@ var fn = {
 		 
 		 //var colaborador= window.localStorage.setItem("nombreUsuario");
 		 $("#botonIniciarSesion").tap(fn.iniciarSesion);
-		 fn.cargaVale();
+		 
 	
 	},
 	iniciarSesion: function(){
@@ -44,8 +44,9 @@ var fn = {
 			}).done(function(mensaje){
 				if(mensaje != "0"){
 					window.localStorage.setItem("nombreUsuario", usuario);
-					$("#usuario").html(usuario);
-					window.location.href="#bienvenido";
+					fn.cargaVale();
+					
+					
 				}else{
 					window.plugins.toast.show("Usuario/Contraseña invalido(s)", 'long', 'center');
 				}
@@ -58,8 +59,9 @@ var fn = {
 		}
 	},
 	cargaVale: function(){
-		console.log("llegue");
+		alert("llegue a carga vale");
 		JsBarcode("#barcode1", "CAE7000008");
+		window.location.href="#bienvenido";
 	}
 };
 /*
