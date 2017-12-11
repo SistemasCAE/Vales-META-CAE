@@ -74,8 +74,8 @@ var fn = {
 				method: "POST",
 				url: "http://intranet.cae3076.com:50000/Vales_META-CAE/Recibe/compruebaSesion.php",
 				data: { 
-					usu: usuario,
-					pass: password
+					opcion: 1,
+					colaborador: colaborador
 				}
 			}).done(function(mensaje){
 				if(mensaje != "0"){
@@ -84,7 +84,6 @@ var fn = {
 					JsBarcode("#barcode1", mensaje);
 					
 				}else{
-					window.plugins.toast.show("Usuario/Contraseña invalido(s)", 'long', 'center');
 				}
 
 			}).fail(function(error){
