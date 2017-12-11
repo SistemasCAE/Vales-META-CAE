@@ -8,8 +8,6 @@ var fn = {
 		 * En esta sección vamos a asociar
 		 * todos los eventos del "Click" al HTML
 		 */
-		 
-		 var colaborador= window.localStorage.setItem("nombreUsuario");
 		 $("#botonIniciarSesion").tap(fn.iniciarSesion);
 		 
 	
