@@ -11,7 +11,7 @@ var fn = {
 		 
 		 var colaborador= window.localStorage.setItem("nombreUsuario");
 		 $("#botonIniciarSesion").tap(fn.iniciarSesion);
-		 fn.cargaVale(colaborador);
+		 
 	
 	},
 	iniciarSesion: function(){
@@ -45,7 +45,7 @@ var fn = {
 				if(mensaje != "0"){
 					window.localStorage.setItem("nombreUsuario", usuario);
 					$("#usuario").html(usuario);
-					window.location.href="#bienvenido";
+					fn.cargaVale(colaborador);
 				}else{
 					window.plugins.toast.show("Usuario/Contraseña invalido(s)", 'long', 'center');
 				}
@@ -58,6 +58,7 @@ var fn = {
 		}
 	},
 	cargaVale: function(colaborador){
+		window.location.href="#bienvenido";
 		console.log("llegue");
 		JsBarcode("#barcode1", "CAE7000008");
 	}
