@@ -8,8 +8,10 @@ var fn = {
 		 * En esta sección vamos a asociar
 		 * todos los eventos del "Click" al HTML
 		 */
-		 $("#botonIniciarSesion").tap(fn.iniciarSesion);
 		 
+		 //var colaborador= window.localStorage.setItem("nombreUsuario");
+		 $("#botonIniciarSesion").tap(fn.iniciarSesion);
+		 fn.cargaVale();
 	
 	},
 	iniciarSesion: function(){
@@ -43,7 +45,7 @@ var fn = {
 				if(mensaje != "0"){
 					window.localStorage.setItem("nombreUsuario", usuario);
 					$("#usuario").html(usuario);
-					fn.cargaVale(colaborador);
+					window.location.href="#bienvenido";
 				}else{
 					window.plugins.toast.show("Usuario/Contraseña invalido(s)", 'long', 'center');
 				}
@@ -55,8 +57,7 @@ var fn = {
 			});
 		}
 	},
-	cargaVale: function(colaborador){
-		window.location.href="#bienvenido";
+	cargaVale: function(){
 		console.log("llegue");
 		JsBarcode("#barcode1", "CAE7000008");
 	}
@@ -64,10 +65,10 @@ var fn = {
 /*
  *Llamar al metodo Init en el navegador
  */
-//fn.init();
+fn.init();
 
 /*
  *Llamar deviceready para compilar
  */
 //
-fn.deviceready();
+//fn.deviceready();
