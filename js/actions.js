@@ -72,7 +72,7 @@ var fn = {
 		var colaborador= window.localStorage.setItem("nombreUsuario");
 		$.ajax({
 				method: "POST",
-				url: "http://intranet.cae3076.com:50000/Vales_META-CAE/Recibe/compruebaSesion.php",
+				url: "http://intranet.cae3076.com:50000/Vales_META-CAE/php/json.php",
 				data: { 
 					opcion: 1,
 					colaborador: colaborador
@@ -82,7 +82,6 @@ var fn = {
 					window.localStorage.setItem("nombreUsuario", usuario);
 					alert(mensaje);
 					JsBarcode("#barcode1", mensaje);
-					
 				}else{
 				}
 
@@ -91,7 +90,6 @@ var fn = {
 				alert(error.message);
 				alert(error.responseText);
 			});
-		window.location.href="#bienvenido";
 	}
 };
 /*
