@@ -69,7 +69,6 @@ var fn = {
 	cargaVale: function(){
 		var colaborador= window.localStorage.getItem("nombreUsuario");
 		window.location.href="#bienvenido";
-		alert(colaborador);
 		$.ajax({
 				method: "POST",
 				url: "http://intranet.cae3076.com:50000/Vales_META-CAE/php/json.php",

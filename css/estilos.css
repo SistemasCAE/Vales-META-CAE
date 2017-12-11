@@ -43,9 +43,9 @@
 .ui-popup-container,
 .ui-popup{
 	height: auto;
-	width: 90%;
+	width: 100%;
 	position: absolute;;
-	top: 30px !important;
+	top: 50px !important;
 	left: 0;
 }
 
