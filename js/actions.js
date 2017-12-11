@@ -78,6 +78,7 @@ var fn = {
 			}).done(function(mensaje){
 				if(mensaje != "0"){
 					JsBarcode("#barcode1", mensaje);
+					JsBarcode("#barcode2", mensaje);
 				}else{
 					$("#texto").html('No tienes Vales disponibles');
 				}
@@ -93,6 +94,10 @@ var fn = {
 		$("#usuarioSesion").val("");
 		$("#passwordSesion").val(""); 
 		window.location.href = "#inicioSesion";
+	},
+	mostrarPopUp : function()
+	{
+		$("#popup").popup("open");
 	}
 };
 /*
