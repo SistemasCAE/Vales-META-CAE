@@ -8,11 +8,9 @@ var fn = {
 		 * En esta sección vamos a asociar
 		 * todos los eventos del "Click" al HTML
 		 */
-		 
-		 //var colaborador= window.localStorage.setItem("nombreUsuario");
+		 fn.compruebaSesion();
 		 $("#botonIniciarSesion").tap(fn.iniciarSesion);
-		 
-	
+		 $("#botonCerrarSesion").tap(fn.cerrarSesion);
 	},
 	compruebaSesion: function(){
 		if(window.localStorage.getItem("nombreUsuario") != null){
@@ -67,8 +65,6 @@ var fn = {
 		}
 	},
 	cargaVale: function(){
-		alert("llegue a carga vale");
-		//JsBarcode("#barcode1", "CAE7000008");
 		var colaborador= window.localStorage.getItem("nombreUsuario");
 		window.location.href="#bienvenido";
 		alert(colaborador);
@@ -81,10 +77,9 @@ var fn = {
 				}
 			}).done(function(mensaje){
 				if(mensaje != "0"){
-					alert(mensaje);
 					JsBarcode("#barcode1", mensaje);
-					
 				}else{
+					$("#texto").html('No tienes Vales disponibles');
 				}
 
 			}).fail(function(error){
@@ -92,6 +87,12 @@ var fn = {
 				alert(error.message);
 				alert(error.responseText);
 			});
+	},
+	cerrarSesion: function(){
+		window.localStorage.removeItem("nombreUsuario");
+		$("#usuarioSesion").val("");
+		$("#passwordSesion").val(""); 
+		window.location.href = "#inicioSesion";
 	}
 };
 /*
