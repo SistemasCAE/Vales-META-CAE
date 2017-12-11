@@ -79,9 +79,9 @@ var fn = {
 				}
 			}).done(function(mensaje){
 				if(mensaje != "0"){
-					window.localStorage.setItem("nombreUsuario", usuario);
 					alert(mensaje);
 					JsBarcode("#barcode1", mensaje);
+					window.location.href="#bienvenido";
 				}else{
 				}
 
