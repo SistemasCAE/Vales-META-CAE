@@ -57,3 +57,24 @@
 #popupfoto img{
 	width: 100%;
 }
+
+.mi_tabla {
+   caption-side: top;
+}
+
+.encabezado_tabla{
+	font-size: 18px;
+	color: #FFFFFF;
+	background: #000000;
+	font-family: Calibri;
+	border-bottom: 1px solid #999;
+	text-align: center;
+}
+
+.cuerpo_tabla{
+	font-size: 14px;
+	color: #000000;
+	font-family: Calibri;
+	border-bottom: 1px solid #999;
+	height: 35px;
+}

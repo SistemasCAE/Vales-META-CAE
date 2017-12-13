@@ -1,6 +1,5 @@
 var fn = {
 	deviceready: function(){
-		//alert();
 		document.addEventListener("deviceready", fn.init/*this.init*/, false);
 	},
 	init: function(){
@@ -26,7 +25,6 @@ var fn = {
 	},
 	
 	iniciarSesion: function(){
-	alert("inicia")
 		var usuario = $("#usuarioSesion").val();
 		var password = $("#passwordSesion").val();
 		try{
@@ -118,10 +116,9 @@ var fn = {
 			colaborador: colaborador
 		}).done (function(data){
 			var tamano = Object.keys(data).length;
-			alert(tamano);
+			$("#resultadoTabla").html("");
 			for(var x=0; x<tamano; x++)
 			{
-				$("#resultadoTabla").html("");
 				$("#resultadoTabla").append("<td>"+data[x]["ID_VALE"]+"</td>");
 			}
 		});
