@@ -14,6 +14,7 @@ var fn = {
 		 fn.compruebaSesion();
 		 fn.cargarValesDisponibles();
 	},
+	
 	compruebaSesion: function(){
 		if(window.localStorage.getItem("nombreUsuario") != null){
 			$("#usuario").html(window.localStorage.getItem("nombreUsuario"));
@@ -23,6 +24,7 @@ var fn = {
 		window.location.href="#paginaInicio";
 		}
 	},
+	
 	iniciarSesion: function(){
 		var usuario = $("#usuarioSesion").val();
 		var password = $("#passwordSesion").val();
@@ -38,6 +40,7 @@ var fn = {
 			window.plugins.toast.show(error, 'short', 'center');
 		}
 	},
+	
 	enviarSesion: function(usuario, password){
 		if(networkState.estaConectado() == false){
 			window.plugins.toast.show("No existe conexión a internet, revisela e intente de nuevo", 'long', 'center');
@@ -67,6 +70,7 @@ var fn = {
 			});
 		}
 	},
+	
 	cargaVale: function(){
 		var colaborador= window.localStorage.getItem("nombreUsuario");
 		window.location.href="#bienvenido";
@@ -92,34 +96,38 @@ var fn = {
 				alert(error.responseText);
 			});
 	},
+	
 	cerrarSesion: function(){
 		window.localStorage.removeItem("nombreUsuario");
 		$("#usuarioSesion").val("");
 		$("#passwordSesion").val(""); 
 		window.location.href = "#inicioSesion";
 	},
+	
 	mostrarPopUp : function()
 	{
 		$("#popup").popup("open");
 	},
+	
 	cargarValesDisponibles : function(){
-		//var colaborador= window.localStorage.getItem("nombreUsuario");
+		var colaborador= window.localStorage.getItem("nombreUsuario");
+		alert(colaborador);
 		console.log("llegue");
-		var colaborador= 'mreyes';
+		//var colaborador= 'mreyes';
 		$.ajax({
 			type: "POST",
 			url:"http://intranet.cae3076.com:50000/Vales_META-CAE/php/json.php",
 			data: { 
 					opcion: 2,
 					colaborador: colaborador
-				},
+				  },
 			async: true,
 			success: function(data){
 				console.log("se envio");
 				$("#resultadoTabla").html("");
 				for (var i in data) {
 					//$("#resultadoTabla").append(data[i]);
-					$("#resultadoTabla").append("<li>"+data[i]+"</li>");
+					$("#resultadoTabla").append("<td>"+data[i]+"</td>");
 				}
 			},
 			error: function (obj, error, objError){
