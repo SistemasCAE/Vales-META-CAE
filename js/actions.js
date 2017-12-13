@@ -132,10 +132,10 @@ var fn = {
 /*
  *Llamar al metodo Init en el navegador
  */
-fn.init();
+//fn.init();
 
 /*
  *Llamar deviceready para compilar
  */
 //
-//fn.deviceready();
+fn.deviceready();
