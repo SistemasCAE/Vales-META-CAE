@@ -12,6 +12,7 @@ var fn = {
 		 $("#botonCerrarSesion").tap(fn.cerrarSesion);
 		 $("#barcode1").tap(fn.mostrarPopUp);
 		 fn.compruebaSesion();
+		 fn.cargarValesDisponibles();
 	},
 	compruebaSesion: function(){
 		if(window.localStorage.getItem("nombreUsuario") != null){
@@ -78,6 +79,7 @@ var fn = {
 				}
 			}).done(function(mensaje){
 				if(mensaje != "0"){
+					$("#texto").html('');
 					JsBarcode("#barcode1", mensaje);
 					JsBarcode("#barcode2", mensaje);
 				}else{
@@ -99,6 +101,32 @@ var fn = {
 	mostrarPopUp : function()
 	{
 		$("#popup").popup("open");
+	},
+	cargarValesDisponibles : function(){
+		//var colaborador= window.localStorage.getItem("nombreUsuario");
+		console.log("llegue");
+		var colaborador= 'mreyes';
+		$.ajax({
+			type: "POST",
+			url:"http://intranet.cae3076.com:50000/Vales_META-CAE/php/json.php",
+			data: { 
+					opcion: 2,
+					colaborador: colaborador
+				},
+			async: true,
+			success: function(data){
+				console.log("se envio");
+				$("#resultadoTabla").html("");
+				for (var i in data) {
+					//$("#resultadoTabla").append(data[i]);
+					$("#resultadoTabla").append("<li>"+data[i]+"</li>");
+				}
+			},
+			error: function (obj, error, objError){
+				alert('error');
+			}
+
+		});
 	}
 };
 /*
