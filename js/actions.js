@@ -12,7 +12,7 @@ var fn = {
 		 $("#botonCerrarSesion").tap(fn.cerrarSesion);
 		 $("#barcode1").tap(fn.mostrarPopUp);
 		 fn.compruebaSesion();
-		 fn.cargarValesDisponibles();
+		 $("#valesDisponibles").tap(fn.cargarValesDisponibles());
 	},
 	
 	compruebaSesion: function(){
@@ -113,28 +113,6 @@ var fn = {
 		var colaborador= window.localStorage.getItem("nombreUsuario");
 		alert(colaborador);
 		console.log("llegue");
-		//var colaborador= 'mreyes';
-		/*$.ajax({
-			type: "POST",
-			url:"http://intranet.cae3076.com:50000/Vales_META-CAE/php/json.php",
-			data: { 
-					opcion: 2,
-					colaborador: colaborador
-				  },
-			async: true,
-			success: function(data){
-				alert("se envio bien");
-				$("#resultadoTabla").html("");
-				for (var i in data) {
-					//$("#resultadoTabla").append(data[i]);
-					$("#resultadoTabla").append("<td>"+data[i]+"</td>");
-				}
-			},
-			error: function (obj, error, objError){
-				alert('error');
-			}
-
-		});*/
 		$.ajax({
 				method: "POST",
 				url: "http://intranet.cae3076.com:50000/Vales_META-CAE/php/json.php",
@@ -143,8 +121,10 @@ var fn = {
 					colaborador: colaborador
 				}
 			}).done(function(mensaje){
+				alert(mensaje);
+				alert(mensaje["ID_VALE"])
 				if(mensaje != "0"){
-					$("#resultadoTabla").append("<td>"+mensaje+"</td>");
+					$("#resultadoTabla").append("<td>"+mensaje["ID_VALE"]+"</td>");
 				}else{
 					
 				}
