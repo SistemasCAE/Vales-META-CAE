@@ -59,8 +59,12 @@
 }
 
 .mi_tabla {
-   caption-side: top;
-   height: -webkit-fill-available;
+	caption-side: top;
+	height: -webkit-fill-available;
+	border: 1px solid #ccc;
+	padding: 0 1rem;
+	margin: 1rem;
+	height: -webkit-fill-available;
 }
 
 .encabezado_tabla{
