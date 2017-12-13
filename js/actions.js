@@ -120,7 +120,7 @@ var fn = {
 			var tablaGenerada="<table class='mi_tabla'><tr class='encabezado_tabla'><td>ID VALE</td></tr>";
 			for(var x=0; x<tamano; x++)
 			{
-				tablaGenerada +="<tr class='cuerpo_tabla'><td>"+data[x]['ID_VALE']+"</td></tr>";
+				tablaGenerada +="<tr class='cuerpo_tabla'><td align='center'>"+data[x]['ID_VALE']+"</td></tr>";
 			}
 			tablaGenerada += "</table>";
 			$("#resultadoTabla").html(tablaGenerada);
