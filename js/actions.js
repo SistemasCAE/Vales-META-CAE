@@ -117,10 +117,10 @@ var fn = {
 		}).done (function(data){
 			var tamano = Object.keys(data).length;
 			$("#resultadoTabla").html("");
-			var tablaGenerada="<table class='encabezado_tabla'><tr class='encabezado_tabla'><td class='cuerpo_tabla'>ID VALE</td></tr>";
+			var tablaGenerada="<table class='mi_tabla'><tr class='encabezado_tabla'><td>ID VALE</td></tr>";
 			for(var x=0; x<tamano; x++)
 			{
-				tablaGenerada +="<tr><td>"+data[x]['ID_VALE']+"</td></tr>";
+				tablaGenerada +="<tr class='cuerpo_tabla'><td>"+data[x]['ID_VALE']+"</td></tr>";
 			}
 			tablaGenerada += "</table>";
 			$("#resultadoTabla").html(tablaGenerada);
