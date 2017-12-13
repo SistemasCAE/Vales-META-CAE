@@ -117,14 +117,14 @@ var fn = {
 		}).done (function(data){
 			var tamano = Object.keys(data).length;
 			$("#resultadoTabla").html("");
-			var table="<table class='encabezado_tabla'><tr class='encabezado_tabla'><td class='cuerpo_tabla'>ID VALE</td></tr>";
+			var tablaGenerada="<table class='encabezado_tabla'><tr class='encabezado_tabla'><td class='cuerpo_tabla'>ID VALE</td></tr>";
 			for(var x=0; x<tamano; x++)
 			{
-				var table +="<tr><td>"+data[x]["ID_VALE"]+"</td></tr>":
+				var tablaGenerada +="<tr><td>"+data[x]['ID_VALE']+"</td></tr>":
 				//$("#resultadoTabla").append("");
 			}
-			var table += "</table>";
-			$("#resultadoTabla").html(table);
+			var tablaGenerada += "</table>";
+			$("#resultadoTabla").html(tablaGenerada);
 		});
 	}
 };
