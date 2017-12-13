@@ -26,6 +26,7 @@ var fn = {
 	},
 	
 	iniciarSesion: function(){
+	alert("inicia")
 		var usuario = $("#usuarioSesion").val();
 		var password = $("#passwordSesion").val();
 		try{
@@ -117,7 +118,7 @@ var fn = {
 		$.getJSON(url, { 
 			opcion: 2,
 			colaborador: colaborador
-		}).done function(data){
+		}).done (function(data){
 			alert("entre al json");
 			alert("Dato: " + data);
 			$.each(data.ID_VALE, function(i,id_vale) {
@@ -125,9 +126,11 @@ var fn = {
 				$("#resultadoTabla").html("");
 				$("#resultadoTabla").append("<td>"+id_vale+"</td>");
 			});
-		}
+		});
 	}
 };
+
+
 /*
  *Llamar al metodo Init en el navegador
  */
