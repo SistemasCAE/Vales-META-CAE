@@ -74,7 +74,7 @@ var fn = {
 		var colaborador= window.localStorage.getItem("nombreUsuario");
 		window.location.href="#bienvenido";
 		$.ajax({
-				method: "POST",
+				method: "GET",
 				url: "http://intranet.cae3076.com:50000/Vales_META-CAE/php/json.php",
 				data: { 
 					opcion: 1,
@@ -112,37 +112,16 @@ var fn = {
 	cargarValesDisponibles : function(){
 		var colaborador= window.localStorage.getItem("nombreUsuario");
 		alert(colaborador);
-		$.ajax({
-				method: "POST",
-				url: "http://intranet.cae3076.com:50000/Vales_META-CAE/php/json.php",
-				data: { 
-					opcion: 2,
-					colaborador: colaborador
-				}
-			}).done(function(mensaje){
-				alert(mensaje);
-				if(mensaje != "0"){
-					alert("entre al if");
-					$.getJSON(mensaje, function(datos) {
-						alert("entre al json");
-						alert("Dato: " + datos["ID_VALE"]);
-						$.each(datos["ID_VALE"], function(idx,id_vale) {
-							alert("ID VALE: " + id_vale);
-							$("#resultadoTabla").html("");
-							$("#resultadoTabla").append("<td>"+datos["ID_VALE"]+"</td>");
-						});
-					});
-				}else{
-					alert("entre al else");
-					//$("#resultadoTabla").html("");
-					//$("#resultadoTabla").append("<td>No tienes vales asignados</td>");	
-				}
-
-			}).fail(function(error){
-				alert(error.status);
-				alert(error.message);
-				alert(error.responseText);
+		alert("entre al if");
+		$.getJSON("http://intranet.cae3076.com:50000/Vales_META-CAE/php/json.php?opcion=2&colaborador="+colaborador, function(datos) {
+			alert("entre al json");
+			alert("Dato: " + datos.ID_VALE);
+			$.each(datos.ID_VALE, function(i,id_vale) {
+				alert("ID VALE: " + id_vale);
+				$("#resultadoTabla").html("");
+				$("#resultadoTabla").append("<td>"+datos.ID_VALE+"</td>");
 			});
+		});
 	}
 };
 /*
