@@ -123,18 +123,15 @@ var fn = {
 				alert(mensaje);
 				if(mensaje != "0"){
 					alert("entre al if");
-					function lee_json() {
+					$.getJSON(mensaje, function(datos) {
 						alert("entre al json");
-						$.getJSON(mensaje, function(datos) {
-							alert("Dato: " + datos["ID_VALE"]);
-							$.each(datos["ID_VALE"], function(idx,id_vale) {
-								alert("ID VALE: " + id_vale);
-								$("#resultadoTabla").html("");
-								$("#resultadoTabla").append("<td>"+datos["ID_VALE"]+"</td>");
-							});
+						alert("Dato: " + datos["ID_VALE"]);
+						$.each(datos["ID_VALE"], function(idx,id_vale) {
+							alert("ID VALE: " + id_vale);
+							$("#resultadoTabla").html("");
+							$("#resultadoTabla").append("<td>"+datos["ID_VALE"]+"</td>");
 						});
-					}
-					
+					});
 				}else{
 					alert("entre al else");
 					//$("#resultadoTabla").html("");
