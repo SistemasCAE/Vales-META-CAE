@@ -86,6 +86,7 @@ var fn = {
 					JsBarcode("#barcode1", mensaje);
 					JsBarcode("#barcode2", mensaje);
 				}else{
+					$("#resultadoTabla").html("");
 					$("#texto").html('No tienes Vales disponibles');
 				}
 
@@ -120,12 +121,14 @@ var fn = {
 					colaborador: colaborador
 				}
 			}).done(function(mensaje){
-				alert(mensaje);
-				alert(mensaje[0])
+				alert(mensaje.data);
+				alert(mensaje.data[0])
 				if(mensaje != "0"){
-					$("#resultadoTabla").append("<td>"+mensaje[0]+"</td>");
+					$("#resultadoTabla").html("");
+					$("#resultadoTabla").append("<td>"+mensaje.data[0]+"</td>");
 				}else{
-					
+					$("#resultadoTabla").html("");
+					$("#resultadoTabla").append("<td>No tienes vales asignados</td>");	
 				}
 
 			}).fail(function(error){
