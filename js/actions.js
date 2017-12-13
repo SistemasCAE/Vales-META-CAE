@@ -20,8 +20,8 @@ var fn = {
 			fn.cargaVale();
 			window.location.href="#bienvenido";
 		}else{
-		window.location.href="#paginaInicio";
 		fn.cargarValesDisponibles();
+		window.location.href="#paginaInicio";
 		}
 	},
 	
@@ -120,12 +120,12 @@ var fn = {
 			colaborador: colaborador
 		}).done (function(data){
 			alert("entre al json");
-			alert("Dato1: " + data[0]);
-			alert("Dato2: " + data["ID VALE"]);
+			alert("Dato1: " + data[0][0]);
+			alert("Dato2: " + data[0]["ID_VALE"]);
 			$.each(data.ID_VALE, function(i,id_vale) {
-				/*alert("ID VALE: " + id_vale);
+				alert("ID VALE: " + id_vale);
 				$("#resultadoTabla").html("");
-				$("#resultadoTabla").append("<td>"+id_vale+"</td>");*/
+				$("#resultadoTabla").append("<td>"+id_vale+"</td>");
 			});
 		});
 	}
