@@ -118,13 +118,13 @@ var fn = {
 			var tamano = Object.keys(data).length;
 			$("#resultadoTabla").html("");
 			var tablaGenerada="<table class='encabezado_tabla'><tr class='encabezado_tabla'><td class='cuerpo_tabla'>ID VALE</td></tr>";
-			for(var x=0; x<tamano; x++)
+			/*for(var x=0; x<tamano; x++)
 			{
 				var tablaGenerada +="<tr><td>"+data[x]['ID_VALE']+"</td></tr>":
 				//$("#resultadoTabla").append("");
 			}
 			var tablaGenerada += "</table>";
-			$("#resultadoTabla").html(tablaGenerada);
+			$("#resultadoTabla").html(tablaGenerada);*/
 		});
 	}
 };
