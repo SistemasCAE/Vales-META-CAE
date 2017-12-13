@@ -31,7 +31,8 @@
 	font-family: Calibri;
 	font-size:  16px;
 	/* IMPORTANTE */
-	width: auto;
+	width: 100%;
+	max-width: 100%;
 	height: auto;
 	margin-left: auto;
 	margin-right: auto;
@@ -60,11 +61,8 @@
 
 .mi_tabla {
 	caption-side: top;
-	height: -webkit-fill-available;
-	border: 1px solid #ccc;
-	padding: 0 1rem;
-	margin: 1rem;
-	height: -webkit-fill-available;
+	width: 100%;
+	max-width: 100%;
 }
 
 .encabezado_tabla{
