@@ -115,11 +115,11 @@ var fn = {
 		alert("entre al if");
 		$.getJSON("http://intranet.cae3076.com:50000/Vales_META-CAE/php/json.php?opcion=2&colaborador="+colaborador, function(datos) {
 			alert("entre al json");
-			alert("Dato: " + datos.ID_VALE);
-			$.each(datos.ID_VALE, function(i,id_vale) {
+			alert("Dato: " + datos["ID_VALE"]);
+			$.each(datos["ID_VALE"], function(i,id_vale) {
 				alert("ID VALE: " + id_vale);
 				$("#resultadoTabla").html("");
-				$("#resultadoTabla").append("<td>"+datos.ID_VALE+"</td>");
+				$("#resultadoTabla").append("<td>"+id_vale+"</td>");
 			});
 		});
 	}
