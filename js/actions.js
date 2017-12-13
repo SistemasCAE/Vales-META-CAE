@@ -117,7 +117,7 @@ var fn = {
 			opcion: 2,
 			colaborador: colaborador
 		}).done (function(data){
-			var = tamano= Object.keys(data).length;
+			var tamano = Object.keys(data).length;
 			alert(tamano);
 			for(var x=0; x<tamano; x++)
 			{
