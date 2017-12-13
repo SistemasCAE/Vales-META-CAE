@@ -12,7 +12,7 @@ var fn = {
 		 $("#botonCerrarSesion").tap(fn.cerrarSesion);
 		 $("#barcode1").tap(fn.mostrarPopUp);
 		 fn.compruebaSesion();
-		 $("#valesDisponibles").tap(fn.cargarValesDisponibles());
+		 $("#valesDisponibles").tap(fn.cargarValesDisponibles);
 	},
 	
 	compruebaSesion: function(){
