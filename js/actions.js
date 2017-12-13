@@ -12,7 +12,6 @@ var fn = {
 		 $("#botonCerrarSesion").tap(fn.cerrarSesion);
 		 $("#barcode1").tap(fn.mostrarPopUp);
 		 fn.compruebaSesion();
-		 $("#valesDisponibles").tap(fn.cargarValesDisponibles);
 	},
 	
 	compruebaSesion: function(){
@@ -22,6 +21,7 @@ var fn = {
 			window.location.href="#bienvenido";
 		}else{
 		window.location.href="#paginaInicio";
+		fn.cargarValesDisponibles();
 		}
 	},
 	
@@ -57,8 +57,7 @@ var fn = {
 				if(mensaje != "0"){
 					window.localStorage.setItem("nombreUsuario", usuario);
 					fn.cargaVale();
-					
-					
+					fn.cargarValesDisponibles();
 				}else{
 					window.plugins.toast.show("Usuario/Contraseña invalido(s)", 'long', 'center');
 				}
@@ -122,9 +121,9 @@ var fn = {
 				}
 			}).done(function(mensaje){
 				alert(mensaje);
-				alert(mensaje["ID_VALE"])
+				alert(mensaje[0])
 				if(mensaje != "0"){
-					$("#resultadoTabla").append("<td>"+mensaje["ID_VALE"]+"</td>");
+					$("#resultadoTabla").append("<td>"+mensaje[0]+"</td>");
 				}else{
 					
 				}
