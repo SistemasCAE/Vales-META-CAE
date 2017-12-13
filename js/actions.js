@@ -119,8 +119,8 @@ var fn = {
 			colaborador: colaborador
 		}).done function(data){
 			alert("entre al json");
-			alert("Dato: " + datos);
-			$.each(datos.ID_VALE, function(i,id_vale) {
+			alert("Dato: " + data);
+			$.each(data.ID_VALE, function(i,id_vale) {
 				alert("ID VALE: " + id_vale);
 				$("#resultadoTabla").html("");
 				$("#resultadoTabla").append("<td>"+id_vale+"</td>");
