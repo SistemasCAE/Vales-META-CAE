@@ -17,9 +17,9 @@ var fn = {
 		if(window.localStorage.getItem("nombreUsuario") != null){
 			$("#usuario").html(window.localStorage.getItem("nombreUsuario"));
 			fn.cargaVale();
+			fn.cargarValesDisponibles();
 			window.location.href="#bienvenido";
 		}else{
-		fn.cargarValesDisponibles();
 		window.location.href="#paginaInicio";
 		}
 	},

@@ -60,6 +60,7 @@
 
 .mi_tabla {
    caption-side: top;
+   height: -webkit-fill-available;
 }
 
 .encabezado_tabla{
