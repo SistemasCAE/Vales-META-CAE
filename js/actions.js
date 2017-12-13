@@ -121,14 +121,22 @@ var fn = {
 					colaborador: colaborador
 				}
 			}).done(function(mensaje){
-				alert(mensaje.data);
-				alert(mensaje.data[0])
+				alert(mensaje);
 				if(mensaje != "0"){
-					$("#resultadoTabla").html("");
-					$("#resultadoTabla").append("<td>"+mensaje.data[0]+"</td>");
+					function lee_json() {
+						$.getJSON(mensaje, function(datos) {
+							alert("Dato: " + datos["ID_VALE"]);
+							$.each(datos["ID_VALE"], function(idx,id_vale) {
+								alert("ID VALE: " + id_vale);
+								$("#resultadoTabla").html("");
+								$("#resultadoTabla").append("<td>"+datos["ID_VALE"]+"</td>");
+							});
+						});
+					}
+					
 				}else{
-					$("#resultadoTabla").html("");
-					$("#resultadoTabla").append("<td>No tienes vales asignados</td>");	
+					//$("#resultadoTabla").html("");
+					//$("#resultadoTabla").append("<td>No tienes vales asignados</td>");	
 				}
 
 			}).fail(function(error){
