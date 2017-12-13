@@ -112,7 +112,6 @@ var fn = {
 	cargarValesDisponibles : function(){
 		var colaborador= window.localStorage.getItem("nombreUsuario");
 		alert(colaborador);
-		console.log("llegue");
 		$.ajax({
 				method: "POST",
 				url: "http://intranet.cae3076.com:50000/Vales_META-CAE/php/json.php",
@@ -123,7 +122,9 @@ var fn = {
 			}).done(function(mensaje){
 				alert(mensaje);
 				if(mensaje != "0"){
+					alert("entre al if");
 					function lee_json() {
+						alert("entre al json");
 						$.getJSON(mensaje, function(datos) {
 							alert("Dato: " + datos["ID_VALE"]);
 							$.each(datos["ID_VALE"], function(idx,id_vale) {
@@ -135,6 +136,7 @@ var fn = {
 					}
 					
 				}else{
+					alert("entre al else");
 					//$("#resultadoTabla").html("");
 					//$("#resultadoTabla").append("<td>No tienes vales asignados</td>");	
 				}
