@@ -114,7 +114,7 @@ var fn = {
 		alert(colaborador);
 		console.log("llegue");
 		//var colaborador= 'mreyes';
-		$.ajax({
+		/*$.ajax({
 			type: "POST",
 			url:"http://intranet.cae3076.com:50000/Vales_META-CAE/php/json.php",
 			data: { 
@@ -123,7 +123,7 @@ var fn = {
 				  },
 			async: true,
 			success: function(data){
-				console.log("se envio");
+				alert("se envio bien");
 				$("#resultadoTabla").html("");
 				for (var i in data) {
 					//$("#resultadoTabla").append(data[i]);
@@ -134,7 +134,26 @@ var fn = {
 				alert('error');
 			}
 
-		});
+		});*/
+		$.ajax({
+				method: "POST",
+				url: "http://intranet.cae3076.com:50000/Vales_META-CAE/php/json.php",
+				data: { 
+					opcion: 2,
+					colaborador: colaborador
+				}
+			}).done(function(mensaje){
+				if(mensaje != "0"){
+					$("#resultadoTabla").append("<td>"+mensaje+"</td>");
+				}else{
+					
+				}
+
+			}).fail(function(error){
+				alert(error.status);
+				alert(error.message);
+				alert(error.responseText);
+			});
 	}
 };
 /*
