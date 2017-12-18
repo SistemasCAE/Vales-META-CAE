@@ -18,6 +18,7 @@ var fn = {
 			$("#usuario").html(window.localStorage.getItem("nombreUsuario"));
 			fn.cargaVale();
 			fn.cargarValesDisponibles();
+			fn.cargarRestaurantes();
 			window.location.href="#bienvenido";
 		}else{
 		window.location.href="#paginaInicio";
@@ -57,6 +58,7 @@ var fn = {
 					window.localStorage.setItem("nombreUsuario", usuario);
 					fn.cargaVale();
 					fn.cargarValesDisponibles();
+					fn.cargarRestaurantes();
 				}else{
 					window.plugins.toast.show("Usuario/Contraseña invalido(s)", 'long', 'center');
 				}
@@ -124,6 +126,26 @@ var fn = {
 			}
 			tablaGenerada += "</table>";
 			$("#resultadoTabla").html(tablaGenerada);
+		});
+	},
+	cargarRestaurantes : function(){
+		var url = "http://intranet.cae3076.com:50000/Vales_META-CAE/php/json.php?";
+		$.getJSON(url, { 
+			opcion: 3
+		}).done (function(data){
+			var tamano = Object.keys(data).length;
+			$("#resultadoRestaurantes").html("");
+			for(var x=0; x<tamano; x++)
+			{
+				var tablaGenerada ="<div><div>Aqui va el mapa</div><div>"+data[x]['NOMBRE']+"</div><div>"+data[x]['DIRECCION']+"</div><div>"+data[x]['TELEFONO']+"</div></div>";
+			}
+			$("#resultadoRestaurantes").html(tablaGenerada);
+			/*for(var x=0; x<tamano; x++)
+			{
+				tablaGenerada +="<tr class='cuerpo_tabla'><td align='center'></td></tr>";
+			}*/
+			//tablaGenerada += "</table>";
+			
 		});
 	}
 };
