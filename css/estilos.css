@@ -88,6 +88,11 @@
     overflow: hidden;
     width: 100%;
 }
-.resultadoRestaurantes .A, .resultadoRestaurantes .B {
+
+.A{
+    float: left;
+}
+
+.B {
     float: left;
 }
