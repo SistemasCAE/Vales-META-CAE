@@ -84,10 +84,10 @@
 	text-align: center;
 }
 
-#resultadoRestaurantes {
+.resultadoRestaurantes {
     overflow: hidden;
     width: 100%;
 }
-#resultadoRestaurantes .A, #resultadoRestaurantes .B {
+.resultadoRestaurantes .A, .resultadoRestaurantes .B {
     float: left;
 }
