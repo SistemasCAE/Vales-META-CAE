@@ -83,3 +83,11 @@
 	height: 35px;
 	text-align: center;
 }
+
+#resultadoRestaurantes {
+    overflow: hidden;
+    width: 100%;
+}
+#resultadoRestaurantes .A, #resultadoRestaurantes .B {
+    float: left;
+}
