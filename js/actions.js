@@ -136,57 +136,27 @@ var fn = {
 			var tamano = Object.keys(data).length;
 			$("#resultadoRestaurantes").html("");
 			var tablaGenerada = "";
-			for(var x=0; x<tamano; x++)
-			{
-				tablaGenerada +="<div class='resultadoRestaurantes'><div class='A' id='map'></div><div class='B'><div>"+data[x]['NOMBRE']+"</div><div>"+data[x]['DIRECCION']+"</div><div>"+data[x]['TELEFONO']+"</div></div></div>";
-			}
+			/*for(var x=0; x<tamano; x++)
+			{*/
+				tablaGenerada +="<div class='resultadoRestaurantes'><div class='A' id='map'></div><div class='B'><div>"+data[0]['NOMBRE']+"</div><div>"+data[0]['DIRECCION']+"</div><div>"+data[0]['TELEFONO']+"</div></div></div>";
+			//}
 			$("#resultadoRestaurantes").html(tablaGenerada);
 			
-			var iconBase = 'http://200.33.128.118/CAEP/ControlSaldos/images/';
-			var icons = {
-			  parking: {
-				icon: iconBase + 'marcador.png'
-			  }
-			};
-
-	  		///////////////////////////////////// LOCALIZACION MAPA /////////////////////////////////////////////
 			var uluru = {lat: 19.028786, lng: -98.214501};
 			var map = new google.maps.Map(document.getElementById('map'), {
-			  zoom: 15,
+			  zoom: 18,
 			  center: uluru
 			});
-			///////////////////////////////////// MARCAS /////////////////////////////////////////////
 			var marker = new google.maps.Marker({
-			   position: new google.maps.LatLng(19.028786,-98.214501),
-			   map: map,
-    		   icon: iconBase + 'marcador.png'
+			  position: uluru,
+			  map: map
 			});
-			
-			///////////////////////////////////// GEOLOCALIZACION /////////////////////////////////////////////
-			var infoWindow = new google.maps.InfoWindow({map: map});
-		  	
-			if (navigator.geolocation) {
-			  navigator.geolocation.getCurrentPosition(function(position) {
-				var pos = {
-				  lat: position.coords.latitude,
-				  lng: position.coords.longitude
-				};
-				///////////////////////////////////// MARCA TU UBICACION /////////////////////////////////////////////
-				var marker = new google.maps.Marker({
-				   position: new google.maps.LatLng(position.coords.latitude,position.coords.longitude),
-				   map: map
-				});
 
-				//infoWindow.setPosition(pos);
-				//infoWindow.setContent('Tu estas aqui.');
-				map.setCenter(pos);
-			  }, function() {
-				handleLocationError(true, infoWindow, map.getCenter());
-			  });
-			} else {
-			  // Browser doesn't support Geolocation
-			  handleLocationError(false, infoWindow, map.getCenter());
-			}
+		  setTimeout(function(){
+			google.maps.event.trigger(map, 'resize');
+			var center = new google.maps.Latng(uluru.lat, uluru.lng);
+			map.panTo(center);
+		  }, 500)
 		  
 			
 			/*for(var x=0; x<tamano; x++)
