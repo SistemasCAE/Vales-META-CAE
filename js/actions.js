@@ -135,34 +135,28 @@ var fn = {
 			opcion: 3
 		}).done (function(data){
 			var tamano = Object.keys(data).length;
-			//$("#resultadoRestaurantes").html("");
+			$("#resultadoRestaurantes").html("");
 			var tablaGenerada = "";
+			for(var x=0; x<tamano; x++)
+			{
+				//tablaGenerada +="<div class='resultadoRestaurantes'><div class='A'></div><div class='B'><div>"+data[0]['NOMBRE']+"</div><div>"+data[0]['DIRECCION']+"</div><div>"+data[0]['TELEFONO']+"</div></div></div>";
+				tablaGenerada +="<div class='resultadoRestaurantes'><div class='A' id='map-canvas'"+x+"></div><div class='B'><div>"+data[0]['NOMBRE']+"</div><div>"+data[0]['DIRECCION']+"</div><div>"+data[0]['TELEFONO']+"</div></div></div>";
+				
+			}
+			$("#resultadoRestaurantes").html(tablaGenerada);
 			/*for(var x=0; x<tamano; x++)
-			{*/
-				t//ablaGenerada +="<div class='resultadoRestaurantes'><div class='A'></div><div class='B'><div>"+data[0]['NOMBRE']+"</div><div>"+data[0]['DIRECCION']+"</div><div>"+data[0]['TELEFONO']+"</div></div></div>";
-			//}
-			//$("#resultadoRestaurantes").html(tablaGenerada);
+			{
+				var mapOptions = {
+					zoom: 18,
+					center: new google.maps.LatLng(-34.397, 150.644),
+					mapTypeId: google.maps.MapTypeId.ROADMAP
+				  };
+				  map = new google.maps.Map(document.getElementById('map-canvas'+x),
+					  mapOptions);
+			}
+			google.maps.event.addDomListener(window, 'load', initialize);*/
 			
 		});
-	},
-	initMap : function ()
-	{
-		console.log("hola");
-        var uluru = {lat: 19.028786, lng: -98.214501};
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 18,
-          center: uluru
-        });
-        var marker = new google.maps.Marker({
-          position: uluru,
-          map: map
-        });
-      
-      setTimeout(function(){
-      	google.maps.event.trigger(map, 'resize');
-      	var center = new google.maps.Latng(uluru.lat, uluru.lng);
-      	map.panTo(center);
-      }, 500)
 	}
 };
 
