@@ -95,6 +95,7 @@
 
 .B {
     float: left;
+	text-align: center;
 }
 
 #map-canvas{
