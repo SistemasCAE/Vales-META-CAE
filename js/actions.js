@@ -144,7 +144,7 @@ var fn = {
 				
 			}
 			$("#resultadoRestaurantes").html(tablaGenerada);
-			/*for(var x=0; x<tamano; x++)
+			for(var x=0; x<tamano; x++)
 			{
 				var mapOptions = {
 					zoom: 18,
@@ -154,7 +154,7 @@ var fn = {
 				  map = new google.maps.Map(document.getElementById('map-canvas'+x),
 					  mapOptions);
 			}
-			google.maps.event.addDomListener(window, 'load', initialize);*/
+			google.maps.event.addDomListener(window, 'load', initialize);
 			
 		});
 	}
