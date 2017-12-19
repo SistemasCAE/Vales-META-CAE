@@ -135,22 +135,13 @@ var fn = {
 			opcion: 3
 		}).done (function(data){
 			var tamano = Object.keys(data).length;
-			$("#resultadoRestaurantes").html("");
+			//$("#resultadoRestaurantes").html("");
 			var tablaGenerada = "";
 			/*for(var x=0; x<tamano; x++)
 			{*/
-				tablaGenerada +="<div class='resultadoRestaurantes'><div class='A' id=''></div><div class='B'><div>"+data[0]['NOMBRE']+"</div><div>"+data[0]['DIRECCION']+"</div><div>"+data[0]['TELEFONO']+"</div></div></div>";
+				tablaGenerada +="<div class='resultadoRestaurantes'><div class='A'></div><div class='B'><div>"+data[0]['NOMBRE']+"</div><div>"+data[0]['DIRECCION']+"</div><div>"+data[0]['TELEFONO']+"</div></div></div>";
 			//}
 			$("#resultadoRestaurantes").html(tablaGenerada);
-			
-			
-		  
-			
-			/*for(var x=0; x<tamano; x++)
-			{
-				tablaGenerada +="<tr class='cuerpo_tabla'><td align='center'></td></tr>";
-			}*/
-			//tablaGenerada += "</table>";
 			
 		});
 	},
@@ -179,10 +170,10 @@ var fn = {
 /*
  *Llamar al metodo Init en el navegador
  */
-fn.init();
+//fn.init();
 
 /*
  *Llamar deviceready para compilar
  */
 //
-//fn.deviceready();
+fn.deviceready();
