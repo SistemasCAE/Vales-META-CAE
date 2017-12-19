@@ -138,7 +138,7 @@ var fn = {
 			var tablaGenerada = "";
 			for(var x=0; x<tamano; x++)
 			{
-				tablaGenerada +="<div class='resultadoRestaurantes'><div class='A'>Aqui va el mapa</div><div class='B'><div>"+data[x]['NOMBRE']+"</div><div>"+data[x]['DIRECCION']+"</div><div>"+data[x]['TELEFONO']+"</div></div></div>";
+				tablaGenerada +="<div class='resultadoRestaurantes'><div class='A' id='map'></div><div class='B'><div>"+data[x]['NOMBRE']+"</div><div>"+data[x]['DIRECCION']+"</div><div>"+data[x]['TELEFONO']+"</div></div></div>";
 			}
 			$("#resultadoRestaurantes").html(tablaGenerada);
 			
