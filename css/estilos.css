@@ -96,3 +96,9 @@
 .B {
     float: left;
 }
+
+#mapa{
+	width: 100%;
+	height: 800px;
+	background-color: grey;
+}

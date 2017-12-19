@@ -8,8 +8,11 @@
 		<link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css">
 		<link rel="stylesheet" type="text/css" href="css/estilos.css">
 		<script type="text/javascript" src="js/JsBarcode.all.js"></script>
+		<script async defer
+			src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDLBIhK4wzdCpSyV57eL32PyZWd_0w_jL8&callback=initMap">
+		</script>
 	</head>
-	<body>
+	<body onLoad="initMap()">
 	
 	<!--//////////////////////////////////////////////////////////// PAGINA PRINCIPAL ////////////////////////////////////////////////////////-->
 	
@@ -164,6 +167,7 @@
 		<div data-role="content" class="ui-content divPadre" align="center">
 			<div class="contenido2" align="center" class="resultadoRestaurantes">
 				<div class="resultadoRestaurantes" id="resultadoRestaurantes">
+					<div id="mapa"></div>
 				</div>
 			</div>
 		</div>
@@ -201,9 +205,7 @@
 	</div>
 	
 	<!--//////////////////////////////////////////////////////////// SCRIPTS ////////////////////////////////////////////////////////-->
-	<script async defer
-    	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDLBIhK4wzdCpSyV57eL32PyZWd_0w_jL8&callback=initMap">
-    </script>	
+	
 	<script type="text/javascript" src="cordova.js"></script>
 	<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
 	<script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
@@ -211,5 +213,27 @@
 	<script type="text/javascript" src="js/API/networkInformation.js"></script>
 	<script type="text/javascript" src="js/API/mediaCapture.js"></script>
 	<script type="text/javascript" src="js/actions.js"></script>
+	<script>
+	function initMap()
+	{
+		//console.log("holaaaaaaaaaaa");
+		var uluru = {lat: 19.028786, lng: -98.214501};
+        var map = new google.maps.Map(document.getElementById('mapa'), {
+          zoom: 18,
+          center: uluru
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+      
+      setTimeout(function(){
+      	google.maps.event.trigger(map, 'resize');
+      	var center = new google.maps.LatLng(uluru.lat, uluru.lng);
+      	map.panTo(center);
+      }, 500)
+	}
+	</script>
+	
 	</body>
 </html>

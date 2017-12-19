@@ -11,6 +11,7 @@ var fn = {
 		 $("#botonCerrarSesion").tap(fn.cerrarSesion);
 		 $("#barcode1").tap(fn.mostrarPopUp);
 		 fn.compruebaSesion();
+		 //fn.initMap();
 	},
 	
 	compruebaSesion: function(){
@@ -138,25 +139,11 @@ var fn = {
 			var tablaGenerada = "";
 			/*for(var x=0; x<tamano; x++)
 			{*/
-				tablaGenerada +="<div class='resultadoRestaurantes'><div class='A' id='map'></div><div class='B'><div>"+data[0]['NOMBRE']+"</div><div>"+data[0]['DIRECCION']+"</div><div>"+data[0]['TELEFONO']+"</div></div></div>";
+				tablaGenerada +="<div class='resultadoRestaurantes'><div class='A' id=''></div><div class='B'><div>"+data[0]['NOMBRE']+"</div><div>"+data[0]['DIRECCION']+"</div><div>"+data[0]['TELEFONO']+"</div></div></div>";
 			//}
 			$("#resultadoRestaurantes").html(tablaGenerada);
 			
-			var uluru = {lat: 19.028786, lng: -98.214501};
-			var map = new google.maps.Map(document.getElementById('map'), {
-			  zoom: 18,
-			  center: uluru
-			});
-			var marker = new google.maps.Marker({
-			  position: uluru,
-			  map: map
-			});
-
-		  setTimeout(function(){
-			google.maps.event.trigger(map, 'resize');
-			var center = new google.maps.Latng(uluru.lat, uluru.lng);
-			map.panTo(center);
-		  }, 500)
+			
 		  
 			
 			/*for(var x=0; x<tamano; x++)
@@ -166,6 +153,25 @@ var fn = {
 			//tablaGenerada += "</table>";
 			
 		});
+	},
+	initMap : function ()
+	{
+		console.log("hola");
+        var uluru = {lat: 19.028786, lng: -98.214501};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 18,
+          center: uluru
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+      
+      setTimeout(function(){
+      	google.maps.event.trigger(map, 'resize');
+      	var center = new google.maps.Latng(uluru.lat, uluru.lng);
+      	map.panTo(center);
+      }, 500)
 	}
 };
 
@@ -173,10 +179,10 @@ var fn = {
 /*
  *Llamar al metodo Init en el navegador
  */
-//fn.init();
+fn.init();
 
 /*
  *Llamar deviceready para compilar
  */
 //
-fn.deviceready();
+//fn.deviceready();
