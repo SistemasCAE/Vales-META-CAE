@@ -141,11 +141,10 @@ var fn = {
 			{
 				//tablaGenerada +="<div class='resultadoRestaurantes'><div class='A'></div><div class='B'><div>"+data[0]['NOMBRE']+"</div><div>"+data[0]['DIRECCION']+"</div><div>"+data[0]['TELEFONO']+"</div></div></div>";
 				tablaGenerada +="<div class='resultadoRestaurantes'><div class='A logoEmpresa'><img src='"+data[x]['LOGO']+"'></div><div class='B'><div>"+data[x]['NOMBRE']+"</div><div>"+data[x]['DIRECCION']+"</div><div>"+data[x]['TELEFONO']+"</div></div></div>";
-				
 			}
 			$("#resultadoRestaurantes").html(tablaGenerada);
 		});
-	},
+	}/*,
 	initMap: function(){
 		google.maps.event.addDomListener(window, 'load', initialize);
 		function initialize() {
@@ -157,7 +156,7 @@ var fn = {
 		  map = new google.maps.Map(document.getElementById('map-canvas'),
 			  mapOptions);
 		}
-	}
+	}*/
 };
 
 
