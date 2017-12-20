@@ -129,34 +129,21 @@ var fn = {
 		});
 	},
 	cargarRestaurantes : function(){
-		alert("llegue");
+		//alert("llegue");
 		var url = "http://intranet.cae3076.com:50000/Vales_META-CAE/php/json.php?";
 		$.getJSON(url, { 
 			opcion: 3
 		}).done (function(data){
-			alert("done");
+			//alert("done");
 			var tamano = Object.keys(data).length;
 			$("#resultadoRestaurantes").html("");
 			var tablaGenerada = "";
 			for(var x=0; x<tamano; x++)
 			{
-				//tablaGenerada +="<div class='resultadoRestaurantes'><div class='A'></div><div class='B'><div>"+data[0]['NOMBRE']+"</div><div>"+data[0]['DIRECCION']+"</div><div>"+data[0]['TELEFONO']+"</div></div></div>";
-				tablaGenerada +="<div class='resultadoRestaurantes'><div class='A map-canvas' id='map-canvas'"+x+"></div><div class='B'><div>"+data[x]['NOMBRE']+"</div><div>"+data[x]['DIRECCION']+"</div><div>"+data[x]['TELEFONO']+"</div></div></div>";
+				tablaGenerada += "<div>"+data[x]['NOMBRE']+"</div>";
 				
 			}
 			$("#resultadoRestaurantes").html(tablaGenerada);
-			/*for(var x=0; x<tamano; x++)
-			{
-				var mapOptions = {
-					zoom: 18,
-					center: new google.maps.LatLng(-34.397, 150.644),
-					mapTypeId: google.maps.MapTypeId.ROADMAP
-				  };
-				  map = new google.maps.Map(document.getElementById('map-canvas'),
-					  mapOptions);
-			}
-			google.maps.event.addDomListener(window, 'load', initialize);*/
-			
 		});
 	}
 };
