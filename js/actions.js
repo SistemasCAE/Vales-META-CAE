@@ -11,7 +11,6 @@ var fn = {
 		 $("#botonCerrarSesion").tap(fn.cerrarSesion);
 		 $("#barcode1").tap(fn.mostrarPopUp);
 		 fn.compruebaSesion();
-		 //fn.initMap();
 	},
 	
 	compruebaSesion: function(){
@@ -139,8 +138,7 @@ var fn = {
 			var tablaGenerada = "";
 			for(var x=0; x<tamano; x++)
 			{
-				//tablaGenerada +="<div class='resultadoRestaurantes'><div class='A'></div><div class='B'><div>"+data[0]['NOMBRE']+"</div><div>"+data[0]['DIRECCION']+"</div><div>"+data[0]['TELEFONO']+"</div></div></div>";
-				tablaGenerada +="<div class='resultadoRestaurantes'><div class='A'></div><div class='B'><div>"+data[x]['NOMBRE']+"</div><div>"+data[x]['DIRECCION']+"</div><div>"+data[x]['TELEFONO']+"</div></div></div>";
+				tablaGenerada +="<div class='resultadoRestaurantes'><div class='A' id='map-canvas'></div><div class='B'><div>"+data[0]['NOMBRE']+"</div><div>"+data[0]['DIRECCION']+"</div><div>"+data[0]['TELEFONO']+"</div></div></div>";
 				
 			}
 			$("#resultadoRestaurantes").html(tablaGenerada);
