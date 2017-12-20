@@ -139,7 +139,6 @@ var fn = {
 			for(var x=0; x<tamano; x++)
 			{
 				tablaGenerada +="<div class='resultadoRestaurantes'><div class='A' id='map-canvas'></div><div class='B'><div>"+data[0]['NOMBRE']+"</div><div>"+data[0]['DIRECCION']+"</div><div>"+data[0]['TELEFONO']+"</div></div></div>";
-				
 			}
 			$("#resultadoRestaurantes").html(tablaGenerada);
 			/*for(var x=0; x<tamano; x++)
