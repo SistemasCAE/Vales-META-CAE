@@ -141,22 +141,23 @@ var fn = {
 			{
 				//tablaGenerada +="<div class='resultadoRestaurantes'><div class='A'></div><div class='B'><div>"+data[0]['NOMBRE']+"</div><div>"+data[0]['DIRECCION']+"</div><div>"+data[0]['TELEFONO']+"</div></div></div>";
 				tablaGenerada +="<div class='resultadoRestaurantes'><div class='A'></div><div class='B'><div>"+data[x]['NOMBRE']+"</div><div>"+data[x]['DIRECCION']+"</div><div>"+data[x]['TELEFONO']+"</div></div></div>";
+				
 			}
 			$("#resultadoRestaurantes").html(tablaGenerada);
+			/*for(var x=0; x<tamano; x++)
+			{
+				var mapOptions = {
+					zoom: 18,
+					center: new google.maps.LatLng(-34.397, 150.644),
+					mapTypeId: google.maps.MapTypeId.ROADMAP
+				  };
+				  map = new google.maps.Map(document.getElementById('map-canvas'+x),
+					  mapOptions);
+			}
+			google.maps.event.addDomListener(window, 'load', initialize);*/
+			
 		});
-	}/*,
-	initMap: function(){
-		google.maps.event.addDomListener(window, 'load', initialize);
-		function initialize() {
-		var mapOptions = {
-			zoom: 18,
-			center: new google.maps.LatLng(-34.397, 150.644),
-			mapTypeId: google.maps.MapTypeId.ROADMAP
-		  };
-		  map = new google.maps.Map(document.getElementById('map-canvas'),
-			  mapOptions);
-		}
-	}*/
+	}
 };
 
 
