@@ -129,19 +129,17 @@ var fn = {
 		});
 	},
 	cargarRestaurantes : function(){
-		//alert("llegue");
 		var url = "http://intranet.cae3076.com:50000/Vales_META-CAE/php/json.php?";
 		$.getJSON(url, { 
 			opcion: 3
 		}).done (function(data){
-			//alert("done");
 			var tamano = Object.keys(data).length;
 			$("#resultadoRestaurantes").html("");
 			var tablaGenerada = "";
 			for(var x=0; x<tamano; x++)
 			{
-				tablaGenerada += "<div>"+data[x]['NOMBRE']+"</div>";
-				
+				//tablaGenerada += "<div>"+data[x]['NOMBRE']+"</div>";
+				tablaGenerada += "<div>NOMBRE</div>";
 			}
 			$("#resultadoRestaurantes").html(tablaGenerada);
 		});
