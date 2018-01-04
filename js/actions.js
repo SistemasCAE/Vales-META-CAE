@@ -134,14 +134,11 @@ var fn = {
 		$.getJSON(url, { 
 			opcion: 3
 		}).done (function(data){
-			alert("entre al done");
 			var tamano = Object.keys(data).length;
 			$("#resultadoRestaurantes").html("");
-			alert("hay "+tamano+" restaurantes");
 			var tablaGenerada = "";
 			for(var x=0; x<tamano; x++)
 			{
-				alert("entre al for");
 				tablaGenerada += "<div>"+data[x]['NOMBRE']+"</div>";
 				//tablaGenerada += "<div>NOMBRE</div>";
 			}
