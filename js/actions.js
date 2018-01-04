@@ -141,7 +141,7 @@ var fn = {
 				//tablaGenerada += "<div>"+data[x]['NOMBRE']+"</div>";
 				tablaGenerada += "<div>NOMBRE</div>";
 			}
-			$("#resultadoRestaurantes").html(tablaGenerada);
+			$("#resultadoRestaurantes").append(tablaGenerada);
 		});
 	}
 };
