@@ -139,7 +139,7 @@ var fn = {
 			var tablaGenerada = "";
 			for(var x=0; x<tamano; x++)
 			{
-				tablaGenerada += "<div><div><img src='"+data[x]['LOGO']+"' alt=''class='img_logo'></div><div>"+data[x]['NOMBRE']+"</div><div><p>"+data[x]['UBICACION']+"</p><p>"+data[x]['TELEFONO']+"</p></div></div>";
+				tablaGenerada += "<div><div><img src='"+data[x]['LOGO']+"' alt=''class='img_logo'></div><div>"+data[x]['NOMBRE']+"</div><div><p>"+data[x]['DIRECCION']+"</p><p>"+data[x]['TELEFONO']+"</p></div></div>";
 				//tablaGenerada += "<div>"+data[x]['NOMBRE']+"</div>";
 			}
 			$("#resultadoRestaurantes").html(tablaGenerada);
